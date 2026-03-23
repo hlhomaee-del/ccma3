@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CCMA Bilingual Success Lab — Segment 3: Clinical & Communication</title>
+<style>
+:root {
+  --cream:#FFFBF4;
+  --gold:#F4A716;--gold-light:#FDE68A;--gold-dark:#D4850A;
+  --teal:#0E9F9F;--teal-light:#CCEFEF;--teal-dark:#087070;
+  --rose:#E8526A;--rose-light:#FDDDE3;--rose-dark:#C03050;
+  --purple:#7C5CBF;--purple-light:#EDE8F8;--purple-dark:#5A3A9A;
+  --green:#2EAA6E;--green-light:#D4F3E7;--green-dark:#1C7A4E;
+  --orange:#F06A2B;--orange-light:#FDE8D8;
+  --blue:#2C7BE5;--blue-light:#D6E8FF;--blue-dark:#1A5BB5;
+  --text-dark:#1E1A2E;--text-mid:#3D3558;--text-soft:#6B6490;
+  --border:#E8E0F0;
+  --shadow:0 4px 24px rgba(124,92,191,0.10);
+  --shadow-hover:0 8px 36px rgba(124,92,191,0.18);
+  --radius:18px;--radius-sm:10px;
+  --font-body:'Georgia','Times New Roman',serif;
+  --font-head:'Trebuchet MS','Arial Rounded MT Bold',Arial,sans-serif;
+  --font-farsi:'Tahoma','Arial',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--cream);color:var(--text-dark);font-size:18px;line-height:1.75;min-height:100vh;}
+
+/* HEADER */
+.site-header{background:linear-gradient(135deg,#E8526A 0%,#7C5CBF 50%,#0E9F9F 100%);position:sticky;top:0;z-index:1000;box-shadow:0 2px 16px rgba(0,0,0,0.15);}
+.header-top{padding:14px 24px 10px;text-align:center;}
+.site-title{font-family:var(--font-head);font-size:clamp(1.1rem,3vw,1.7rem);color:#fff;font-weight:700;text-shadow:0 2px 8px rgba(0,0,0,0.25);line-height:1.3;}
+.site-subtitle{font-size:0.85rem;color:rgba(255,255,255,0.88);margin-top:2px;font-family:var(--font-farsi);}
+.nav-scroll{overflow-x:auto;background:rgba(255,255,255,0.15);backdrop-filter:blur(8px);border-top:1px solid rgba(255,255,255,0.2);}
+.nav-list{display:flex;list-style:none;padding:0 12px;gap:4px;white-space:nowrap;min-width:max-content;}
+.nav-list li button{background:none;border:none;cursor:pointer;padding:10px 16px;font-family:var(--font-head);font-size:0.82rem;font-weight:600;color:rgba(255,255,255,0.85);border-bottom:3px solid transparent;transition:all 0.2s;}
+.nav-list li button:hover,.nav-list li button.active{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,0.1);border-radius:6px 6px 0 0;}
+
+/* MAIN */
+.main-content{max-width:980px;margin:0 auto;padding:28px 20px 60px;}
+.section-panel{display:none;animation:fadeIn 0.35s ease;}
+.section-panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* CARDS */
+.card{background:#fff;border-radius:var(--radius);padding:28px;margin-bottom:24px;box-shadow:var(--shadow);border:1px solid var(--border);}
+.card-teal{border-left:6px solid var(--teal);background:linear-gradient(135deg,#fff 80%,var(--teal-light));}
+.card-gold{border-left:6px solid var(--gold);background:linear-gradient(135deg,#fff 80%,#FFF8D6);}
+.card-rose{border-left:6px solid var(--rose);background:linear-gradient(135deg,#fff 80%,var(--rose-light));}
+.card-purple{border-left:6px solid var(--purple);background:linear-gradient(135deg,#fff 80%,var(--purple-light));}
+.card-green{border-left:6px solid var(--green);background:linear-gradient(135deg,#fff 80%,var(--green-light));}
+.card-orange{border-left:6px solid var(--orange);background:linear-gradient(135deg,#fff 80%,var(--orange-light));}
+.card-blue{border-left:6px solid var(--blue);background:linear-gradient(135deg,#fff 80%,var(--blue-light));}
+
+/* SECTION HERO */
+.section-hero{text-align:center;padding:36px 24px 28px;border-radius:var(--radius);margin-bottom:30px;}
+.section-hero.rose-hero{background:linear-gradient(135deg,var(--rose-light),#ffe8ec);border:2px solid var(--rose);}
+.section-hero.blue-hero{background:linear-gradient(135deg,var(--blue-light),#e8f0ff);border:2px solid var(--blue);}
+.hero-emoji{font-size:3rem;display:block;margin-bottom:10px;}
+.hero-title{font-family:var(--font-head);font-size:clamp(1.4rem,4vw,2rem);color:var(--text-dark);font-weight:700;margin-bottom:8px;}
+.hero-title-farsi{font-family:var(--font-farsi);font-size:1.1rem;color:var(--text-mid);direction:rtl;margin-bottom:12px;}
+.hero-desc{font-size:1rem;color:var(--text-mid);max-width:600px;margin:0 auto;}
+
+/* MINI NAV */
+.section-nav-mini{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;}
+.snav-btn{background:#fff;border:2px solid var(--border);border-radius:50px;padding:8px 18px;font-family:var(--font-head);font-size:0.82rem;font-weight:700;cursor:pointer;color:var(--text-mid);transition:all 0.2s;}
+.snav-btn:hover,.snav-btn.active{background:var(--rose);border-color:var(--rose);color:#fff;}
+.snav-btn.comm-btn:hover,.snav-btn.comm-btn.active{background:var(--blue);border-color:var(--blue);color:#fff;}
+
+/* BILINGUAL */
+.bilingual-block{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:16px 0;}
+@media(max-width:620px){.bilingual-block{grid-template-columns:1fr;}}
+.lang-en{background:var(--blue-light);border-radius:var(--radius-sm);padding:16px 18px;border-left:4px solid var(--blue);}
+.lang-fa{background:var(--gold-light);border-radius:var(--radius-sm);padding:16px 18px;border-right:4px solid var(--gold);direction:rtl;text-align:right;font-family:var(--font-farsi);}
+.lang-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-soft);margin-bottom:6px;display:block;}
+
+/* TIP BOX */
+.tip-box{background:linear-gradient(135deg,#FFFBE6,#FFF3B0);border:2px dashed var(--gold);border-radius:var(--radius-sm);padding:16px 20px;margin:16px 0;display:flex;gap:12px;align-items:flex-start;}
+.tip-icon{font-size:1.5rem;flex-shrink:0;}
+.tip-content{flex:1;}
+.tip-title{font-weight:700;color:var(--gold-dark);font-size:0.85rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;}
+.tip-text{font-size:0.95rem;color:var(--text-mid);}
+.tip-farsi{font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.9rem;color:var(--text-mid);margin-top:6px;border-top:1px dashed var(--gold);padding-top:6px;}
+
+/* STEP LIST */
+.step-list{list-style:none;margin:16px 0;}
+.step-list li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--border);}
+.step-list li:last-child{border-bottom:none;}
+.step-num-sm{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0;}
+.step-num-sm.rose{background:var(--rose-light);color:var(--rose-dark);}
+.step-num-sm.teal{background:var(--teal-light);color:var(--teal-dark);}
+.step-num-sm.purple{background:var(--purple-light);color:var(--purple-dark);}
+.step-num-sm.green{background:var(--green-light);color:var(--green-dark);}
+.step-body{flex:1;}
+.step-en{font-size:0.97rem;color:var(--text-dark);font-weight:600;}
+.step-fa{font-family:var(--font-farsi);font-size:0.88rem;color:var(--text-soft);direction:rtl;text-align:right;margin-top:2px;}
+.step-desc-sm{font-size:0.88rem;color:var(--text-mid);margin-top:4px;}
+
+/* HIGHLIGHT */
+.highlight-teal{background:var(--teal-light);border-left:5px solid var(--teal);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+.highlight-gold{background:#FFF8D6;border-left:5px solid var(--gold);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+.highlight-green{background:var(--green-light);border-left:5px solid var(--green);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+.highlight-rose{background:var(--rose-light);border-left:5px solid var(--rose);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+.highlight-purple{background:var(--purple-light);border-left:5px solid var(--purple);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+.highlight-orange{background:var(--orange-light);border-left:5px solid var(--orange);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+.highlight-blue{background:var(--blue-light);border-left:5px solid var(--blue);border-radius:var(--radius-sm);padding:14px 18px;margin:10px 0;}
+
+/* DIALOGUE BOX */
+.dialogue-box{background:#fff;border-radius:var(--radius);padding:20px;border:2px solid var(--border);margin:16px 0;box-shadow:var(--shadow);}
+.dialogue-line{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start;}
+.dialogue-line.patient{flex-direction:row;}
+.dialogue-line.ma{flex-direction:row-reverse;}
+.dialogue-bubble{max-width:75%;padding:12px 16px;border-radius:18px;font-size:0.92rem;line-height:1.55;}
+.dialogue-line.patient .dialogue-bubble{background:var(--blue-light);border-bottom-left-radius:4px;color:var(--text-dark);}
+.dialogue-line.ma .dialogue-bubble{background:var(--teal-light);border-bottom-right-radius:4px;color:var(--text-dark);}
+.dialogue-avatar{font-size:1.6rem;flex-shrink:0;}
+.dialogue-label{font-size:0.72rem;font-weight:700;text-transform:uppercase;color:var(--text-soft);margin-bottom:3px;}
+.dialogue-fa{font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.82rem;color:var(--text-soft);margin-top:4px;}
+
+/* SCENARIO CARD */
+.scenario-card{background:#fff;border-radius:var(--radius);padding:22px;border:2px solid var(--border);margin:16px 0;box-shadow:var(--shadow);}
+.scenario-header{display:flex;gap:12px;align-items:center;margin-bottom:14px;}
+.scenario-icon{font-size:2rem;}
+.scenario-title{font-family:var(--font-head);font-weight:700;font-size:1rem;color:var(--text-dark);}
+.scenario-fa{font-family:var(--font-farsi);font-size:0.85rem;color:var(--text-soft);direction:rtl;}
+
+/* QUIZ */
+.mini-quiz{background:var(--purple-light);border-radius:var(--radius);padding:22px;margin:20px 0;border:2px solid var(--purple);}
+.quiz-q{font-weight:700;font-size:1rem;color:var(--text-dark);margin-bottom:8px;}
+.quiz-q-fa{font-family:var(--font-farsi);font-size:0.9rem;color:var(--text-mid);direction:rtl;text-align:right;margin-bottom:14px;}
+.quiz-options{display:flex;flex-direction:column;gap:10px;}
+.quiz-option{background:#fff;border:2px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;cursor:pointer;font-size:0.95rem;text-align:left;font-family:var(--font-body);transition:all 0.2s;color:var(--text-dark);}
+.quiz-option:hover:not(:disabled){border-color:var(--purple);transform:translateX(4px);}
+.quiz-option.correct{background:var(--green-light);border-color:var(--green);color:var(--green-dark);}
+.quiz-option.wrong{background:var(--rose-light);border-color:var(--rose);color:var(--rose-dark);}
+.quiz-feedback{margin-top:14px;padding:14px;border-radius:var(--radius-sm);display:none;font-size:0.93rem;}
+.quiz-feedback.show{display:block;}
+.correct-fb{background:var(--green-light);border-left:4px solid var(--green);}
+.wrong-fb{background:var(--rose-light);border-left:4px solid var(--rose);}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:50px;border:none;cursor:pointer;font-family:var(--font-head);font-size:1rem;font-weight:700;transition:all 0.22s;box-shadow:0 3px 12px rgba(0,0,0,0.12);}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+.btn-teal{background:var(--teal);color:#fff;}.btn-teal:hover{background:var(--teal-dark);}
+.btn-gold{background:var(--gold);color:#fff;}.btn-gold:hover{background:var(--gold-dark);}
+.btn-green{background:var(--green);color:#fff;}.btn-green:hover{background:var(--green-dark);}
+.btn-purple{background:var(--purple);color:#fff;}.btn-purple:hover{background:var(--purple-dark);}
+.btn-rose{background:var(--rose);color:#fff;}.btn-rose:hover{background:var(--rose-dark);}
+.btn-blue{background:var(--blue);color:#fff;}.btn-blue:hover{background:var(--blue-dark);}
+.btn-outline-rose{background:transparent;border:2px solid var(--rose);color:var(--rose);}.btn-outline-rose:hover{background:var(--rose);color:#fff;}
+.btn-outline{background:transparent;border:2px solid var(--purple);color:var(--purple);}.btn-outline:hover{background:var(--purple);color:#fff;}
+.btn-sm{padding:8px 18px;font-size:0.88rem;}
+.btn-group{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0;}
+
+/* ACCORDION */
+.accordion{margin:16px 0;}
+.accordion-item{background:#fff;border-radius:var(--radius-sm);margin-bottom:10px;border:1px solid var(--border);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.05);}
+.accordion-btn{width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;text-align:left;font-family:var(--font-head);font-size:0.98rem;font-weight:700;color:var(--text-dark);display:flex;align-items:center;justify-content:space-between;gap:12px;transition:background 0.18s;}
+.accordion-btn:hover{background:var(--rose-light);}
+.accordion-btn .acc-icon{font-size:1.1rem;transition:transform 0.25s;flex-shrink:0;}
+.accordion-btn.open .acc-icon{transform:rotate(180deg);}
+.accordion-btn .acc-en{flex:1;}
+.accordion-btn .acc-fa{font-family:var(--font-farsi);font-size:0.88rem;color:var(--text-soft);direction:rtl;margin-right:8px;}
+.accordion-body{display:none;padding:0 20px 18px;font-size:0.95rem;color:var(--text-mid);border-top:1px solid var(--border);}
+.accordion-body.open{display:block;}
+
+/* REVEAL */
+.reveal-btn{background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border:none;border-radius:var(--radius-sm);padding:11px 22px;font-family:var(--font-head);font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.2s;box-shadow:0 2px 10px rgba(14,159,159,0.25);}
+.reveal-btn:hover{transform:translateY(-2px);}
+.reveal-content{display:none;margin-top:12px;animation:fadeIn 0.25s ease;}
+.reveal-content.open{display:block;}
+
+/* COACH */
+.coach-box{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(135deg,#F5F0FF,var(--purple-light));border-radius:var(--radius);padding:20px;margin:20px 0;border:2px solid var(--purple);}
+.coach-avatar{font-size:2.5rem;flex-shrink:0;background:#fff;border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 12px rgba(124,92,191,0.2);}
+.coach-content{flex:1;}
+.coach-name{font-weight:700;color:var(--purple-dark);font-size:0.82rem;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.5px;}
+.coach-text{font-size:0.97rem;color:var(--text-dark);margin-bottom:8px;}
+.coach-fa{font-family:var(--font-farsi);font-size:0.9rem;color:var(--text-mid);direction:rtl;text-align:right;}
+
+/* BADGE */
+.badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-right:8px;margin-bottom:8px;}
+.badge-rose{background:var(--rose-light);color:var(--rose-dark);}
+.badge-teal{background:var(--teal-light);color:var(--teal-dark);}
+.badge-green{background:var(--green-light);color:var(--green-dark);}
+.badge-gold{background:#FFF8D6;color:var(--gold-dark);}
+.badge-purple{background:var(--purple-light);color:var(--purple-dark);}
+.badge-blue{background:var(--blue-light);color:var(--blue-dark);}
+
+/* TABLE */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.92rem;}
+.data-table th{background:var(--rose);color:#fff;padding:10px 14px;text-align:left;font-family:var(--font-head);}
+.data-table td{padding:10px 14px;border-bottom:1px solid var(--border);}
+.data-table tr:nth-child(even){background:#f9f9f9;}
+.data-table tr:hover{background:var(--rose-light);}
+.data-table.blue th{background:var(--blue);}
+.data-table.blue tr:hover{background:var(--blue-light);}
+.fa-cell{font-family:var(--font-farsi);direction:rtl;text-align:right;}
+
+/* DIVIDER */
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);margin:24px 0;}
+
+/* GRID */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media(max-width:700px){.grid-2,.grid-3{grid-template-columns:1fr;}}
+
+h2{font-family:var(--font-head);font-size:clamp(1.15rem,3vw,1.55rem);color:var(--text-dark);margin-bottom:6px;font-weight:700;}
+h3{font-family:var(--font-head);font-size:1.08rem;color:var(--text-mid);margin-bottom:4px;font-weight:700;}
+.farsi-h{font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.95rem;color:var(--text-soft);margin-bottom:16px;}
+p{margin-bottom:10px;}
+
+/* TAB NAV */
+.tab-nav{display:flex;gap:0;margin-bottom:0;border-bottom:3px solid var(--border);}
+.tab-btn{padding:12px 22px;border:none;background:none;cursor:pointer;font-family:var(--font-head);font-size:0.9rem;font-weight:700;color:var(--text-soft);border-bottom:3px solid transparent;margin-bottom:-3px;transition:all 0.2s;}
+.tab-btn:hover{color:var(--rose);}
+.tab-btn.active{color:var(--rose);border-bottom-color:var(--rose);}
+.tab-panel{display:none;padding-top:20px;}
+.tab-panel.active{display:block;}
+
+/* DO / DON'T */
+.do-dont{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0;}
+@media(max-width:600px){.do-dont{grid-template-columns:1fr;}}
+.do-box{background:var(--green-light);border-radius:var(--radius-sm);padding:18px;border:2px solid var(--green);}
+.dont-box{background:var(--rose-light);border-radius:var(--radius-sm);padding:18px;border:2px solid var(--rose);}
+.do-title{font-family:var(--font-head);font-weight:700;font-size:0.95rem;margin-bottom:10px;}
+.do-box .do-title{color:var(--green-dark);}
+.dont-box .do-title{color:var(--rose-dark);}
+.do-item{font-size:0.9rem;color:var(--text-mid);margin-bottom:6px;padding-left:20px;position:relative;}
+.do-item::before{position:absolute;left:0;}
+.do-box .do-item::before{content:'✅';}
+.dont-box .do-item::before{content:'❌';}
+.do-fa{font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.85rem;color:var(--text-soft);margin-top:2px;}
+
+/* FOOTER */
+.site-footer{background:var(--text-dark);color:rgba(255,255,255,0.75);text-align:center;padding:24px 20px;font-size:0.82rem;margin-top:40px;}
+.site-footer strong{color:var(--gold);}
+.footer-farsi{font-family:var(--font-farsi);direction:rtl;font-size:0.8rem;margin-top:4px;}
+
+/* SCROLL TOP */
+#scrollTop{position:fixed;bottom:24px;right:20px;background:var(--rose);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 16px rgba(232,82,106,0.35);opacity:0;transition:opacity 0.3s;z-index:999;}
+#scrollTop.visible{opacity:1;}
+
+@media(max-width:500px){body{font-size:16px;}.card{padding:18px;}.main-content{padding:18px 12px 50px;}.btn{padding:10px 18px;font-size:0.9rem;}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <div class="site-title">💉 CCMA Bilingual Success Lab — Segment 3</div>
+    <div class="site-subtitle">Clinical Skills + Communication · مهارت‌های بالینی و ارتباطی</div>
+  </div>
+  <nav class="nav-scroll">
+    <ul class="nav-list">
+      <li><button onclick="gotoSeg(1)">🏠 Seg 1</button></li>
+      <li><button onclick="gotoSeg(2)">← Seg 2</button></li>
+      <li><button class="active" onclick="showMainSection('clinical',this)">💉 Clinical</button></li>
+      <li><button onclick="showMainSection('communication',this)">💬 Communication</button></li>
+      <li><button onclick="gotoSeg(4)">Seg 4 →</button></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="main-content">
+
+  <!-- ====================================================
+       SECTION 4: CLINICAL SKILLS
+  ==================================================== -->
+  <section id="clinical" class="section-panel active">
+
+    <div class="section-hero rose-hero">
+      <span class="hero-emoji">💉</span>
+      <div class="hero-title">Clinical Skills</div>
+      <div class="hero-title-farsi">مهارت‌های بالینی</div>
+      <p class="hero-desc">Learn what you do as a medical assistant in the clinic — step by step, in simple English and Persian.</p>
+    </div>
+
+    <div class="section-nav-mini" id="clinicalMiniNav">
+      <button class="snav-btn active" onclick="showClinicalSub('vitalSteps',this)">❤️ Vital Signs Steps</button>
+      <button class="snav-btn" onclick="showClinicalSub('rooming',this)">🚪 Rooming a Patient</button>
+      <button class="snav-btn" onclick="showClinicalSub('injections',this)">💉 Injections</button>
+      <button class="snav-btn" onclick="showClinicalSub('specimens',this)">🧪 Specimens</button>
+      <button class="snav-btn" onclick="showClinicalSub('ekg',this)">📈 EKG Basics</button>
+      <button class="snav-btn" onclick="showClinicalSub('sterile',this)">🧤 Sterile vs Clean</button>
+      <button class="snav-btn" onclick="showClinicalSub('documenting',this)">📝 Documenting</button>
+    </div>
+
+    <!-- ===== VITAL SIGNS STEPS ===== -->
+    <div id="clinicalSub_vitalSteps" class="clinical-sub">
+      <div class="card card-rose">
+        <h2>❤️ How to Measure Vital Signs · چطور علائم حیاتی اندازه بگیریم</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>Vital signs are one of the first things you do when rooming a patient. You must do them in the right order and with the right technique.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>علائم حیاتی یکی از اولین کارهایی است که هنگام آماده‌سازی بیمار انجام می‌دهید. باید به ترتیب درست و با روش صحیح انجام شود.</p>
+          </div>
+        </div>
+
+        <!-- Blood Pressure -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🩺 How to Take Blood Pressure</span>
+              <span class="acc-fa">چطور فشار خون بگیریم</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">Steps · مراحل</span>
+                  <ul class="step-list">
+                    <li><div class="step-num-sm rose">1</div><div class="step-body"><div class="step-en">Have the patient sit quietly for 5 minutes</div><div class="step-fa">بیمار را بگذارید ۵ دقیقه آرام بنشیند</div></div></li>
+                    <li><div class="step-num-sm rose">2</div><div class="step-body"><div class="step-en">Place the cuff 1 inch above the elbow (antecubital space)</div><div class="step-fa">کاف را ۱ اینچ بالای آرنج قرار دهید</div></div></li>
+                    <li><div class="step-num-sm rose">3</div><div class="step-body"><div class="step-en">Wrap the cuff snugly — not too tight, not too loose</div><div class="step-fa">کاف را محکم ببندید — نه خیلی تنگ، نه خیلی شل</div></div></li>
+                    <li><div class="step-num-sm rose">4</div><div class="step-body"><div class="step-en">Place stethoscope over the brachial artery</div><div class="step-fa">گوشی را روی شریان بازویی بگذارید</div></div></li>
+                    <li><div class="step-num-sm rose">5</div><div class="step-body"><div class="step-en">Pump cuff to 180 mmHg (or 30 above expected systolic)</div><div class="step-fa">کاف را به ۱۸۰ mmHg پمپ کنید</div></div></li>
+                    <li><div class="step-num-sm rose">6</div><div class="step-body"><div class="step-en">Slowly release. First sound = systolic. Last sound = diastolic.</div><div class="step-fa">آرام رها کنید. اولین صدا = سیستولیک. آخرین صدا = دیاستولیک.</div></div></li>
+                    <li><div class="step-num-sm rose">7</div><div class="step-body"><div class="step-en">Record as systolic/diastolic (e.g., 120/80)</div><div class="step-fa">به صورت سیستولیک/دیاستولیک ثبت کنید (مثال: ۱۲۰/۸۰)</div></div></li>
+                  </ul>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">⚠️ Common Mistakes · اشتباهات رایج</span>
+                  <ul style="list-style:none;margin-top:8px;line-height:2.2;">
+                    <li>❌ Cuff too loose = falsely HIGH reading</li>
+                    <li>❌ کاف شل = عدد غلط بالا</li>
+                    <li>❌ Patient talking = inaccurate reading</li>
+                    <li>❌ بیمار صحبت کند = عدد نادقیق</li>
+                    <li>❌ Wrong size cuff = wrong results</li>
+                    <li>❌ سایز اشتباه کاف = نتیجه غلط</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tip-box">
+                <div class="tip-icon">🎯</div>
+                <div class="tip-content">
+                  <div class="tip-title">EXAM TIP</div>
+                  <div class="tip-text">Korotkoff sounds = the sounds you hear when taking BP. First Korotkoff sound = systolic. Fifth = diastolic (when sound disappears).</div>
+                  <div class="tip-farsi">صداهای کوروتکف = صداهایی که هنگام اندازه‌گیری BP می‌شنوید. اول = سیستولیک. پنجم (وقتی صدا ناپدید می‌شود) = دیاستولیک.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🌡️ How to Take Temperature</span>
+              <span class="acc-fa">چطور دما بگیریم</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">Methods · روش‌ها</span>
+                  <ul style="list-style:none;margin-top:6px;line-height:2;">
+                    <li>🟢 <strong>Oral (mouth)</strong> — Most common. Patient must not eat/drink for 15 min before.</li>
+                    <li>🟡 <strong>Axillary (armpit)</strong> — Least accurate. Used when mouth is not safe.</li>
+                    <li>🔵 <strong>Tympanic (ear)</strong> — Quick. Must aim at eardrum correctly.</li>
+                    <li>🟠 <strong>Temporal (forehead)</strong> — Quick scan. Used in children.</li>
+                    <li>🔴 <strong>Rectal</strong> — Most accurate. Invasive. Used for infants.</li>
+                  </ul>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی · معنی روش‌ها</span>
+                  <ul style="list-style:none;margin-top:6px;line-height:2.2;font-size:0.9rem;">
+                    <li>🟢 <strong>دهانی</strong> — رایج‌ترین. بیمار نباید ۱۵ دقیقه قبل چیزی بخورد یا بنوشد.</li>
+                    <li>🟡 <strong>زیر بغل</strong> — کمترین دقت. وقتی دهان مناسب نیست.</li>
+                    <li>🔵 <strong>گوشی</strong> — سریع. باید به پرده گوش هدف بگیرید.</li>
+                    <li>🟠 <strong>پیشانی</strong> — اسکن سریع. برای کودکان.</li>
+                    <li>🔴 <strong>رکتوم</strong> — دقیق‌ترین. تهاجمی. برای نوزادان.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="highlight-gold">
+                <strong>📊 Temperature Comparison:</strong><br>
+                Oral: 98.6°F (37°C) | Axillary: 0.5–1°F LOWER | Rectal: 1°F HIGHER<br>
+                <span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;font-size:0.88rem;">دهانی: ۳۷ درجه | زیر بغل: ۰.۵ تا ۱ درجه کمتر | رکتوم: ۱ درجه بیشتر</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">💓 How to Take Pulse (Heart Rate)</span>
+              <span class="acc-fa">چطور نبض بگیریم</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <ul class="step-list">
+                <li><div class="step-num-sm teal">1</div><div class="step-body"><div class="step-en">Use your index and middle finger (NOT thumb — thumb has its own pulse)</div><div class="step-fa">از انگشت اشاره و وسط استفاده کنید (نه شست — شست نبض خودش را دارد)</div></div></li>
+                <li><div class="step-num-sm teal">2</div><div class="step-body"><div class="step-en">Most common site: Radial artery (thumb side of wrist)</div><div class="step-fa">رایج‌ترین محل: شریان رادیال (سمت شست مچ دست)</div></div></li>
+                <li><div class="step-num-sm teal">3</div><div class="step-body"><div class="step-en">Count beats for 60 seconds (or 30 seconds × 2)</div><div class="step-fa">ضربان را ۶۰ ثانیه بشمارید (یا ۳۰ ثانیه × ۲)</div></div></li>
+                <li><div class="step-num-sm teal">4</div><div class="step-body"><div class="step-en">Note the rhythm: regular or irregular?</div><div class="step-fa">ریتم را توجه کنید: منظم یا نامنظم؟</div></div></li>
+              </ul>
+              <div class="highlight-teal">
+                <strong>🏥 Pulse Sites · محل‌های نبض‌گیری:</strong><br>
+                Radial (wrist) · Carotid (neck) · Brachial (arm) · Apical (chest — used for infants)<br>
+                <span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;font-size:0.88rem;">رادیال (مچ) · کاروتید (گردن) · بازویی (بازو) · آپیکال (سینه — برای نوزادان)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Quiz -->
+        <div class="mini-quiz">
+          <div class="quiz-q">Which finger should you NOT use to take a pulse?</div>
+          <div class="quiz-q-fa">از کدام انگشت نباید برای گرفتن نبض استفاده کنید؟</div>
+          <div class="quiz-options" id="q_clin1">
+            <button class="quiz-option" onclick="checkQ('q_clin1',this,false)">A. Index finger</button>
+            <button class="quiz-option" onclick="checkQ('q_clin1',this,false)">B. Middle finger</button>
+            <button class="quiz-option" onclick="checkQ('q_clin1',this,true)">C. Thumb ✓</button>
+            <button class="quiz-option" onclick="checkQ('q_clin1',this,false)">D. Ring finger</button>
+          </div>
+          <div class="quiz-feedback" id="q_clin1_fb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== ROOMING A PATIENT ===== -->
+    <div id="clinicalSub_rooming" class="clinical-sub" style="display:none;">
+      <div class="card card-teal">
+        <h2>🚪 Rooming a Patient · آماده‌سازی اتاق بیمار</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p><strong>Rooming</strong> means preparing the patient for the provider visit. It is a key skill you will do many times every day.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p><strong>آماده‌سازی بیمار</strong> یعنی آماده کردن بیمار برای ملاقات با پزشک. این یک مهارت کلیدی است که هر روز بارها انجام می‌دهید.</p>
+          </div>
+        </div>
+
+        <ul class="step-list">
+          <li><div class="step-num-sm rose">1</div><div class="step-body"><div class="step-en">🧼 Wash hands BEFORE entering the room</div><div class="step-fa">قبل از ورود به اتاق دست بشویید</div><div class="step-desc-sm">Always wash hands before and after every patient.</div></div></li>
+          <li><div class="step-num-sm rose">2</div><div class="step-body"><div class="step-en">🚪 Knock before entering — always!</div><div class="step-fa">قبل از ورود در بزنید — همیشه!</div><div class="step-desc-sm">This respects the patient's privacy and dignity.</div></div></li>
+          <li><div class="step-num-sm rose">3</div><div class="step-body"><div class="step-en">👋 Introduce yourself: "Hi, I'm [name], the medical assistant."</div><div class="step-fa">خودتان را معرفی کنید: «سلام، من [نام] هستم، دستیار پزشکی.»</div></div></li>
+          <li><div class="step-num-sm rose">4</div><div class="step-body"><div class="step-en">✅ Verify patient identity — name + date of birth (2 identifiers)</div><div class="step-fa">هویت بیمار را تأیید کنید — نام + تاریخ تولد (۲ شناسه)</div><div class="step-desc-sm">This prevents wrong-patient errors. Very important for safety!</div></div></li>
+          <li><div class="step-num-sm rose">5</div><div class="step-body"><div class="step-en">📋 Ask about the chief complaint (CC)</div><div class="step-fa">درباره شکایت اصلی بپرسید</div><div class="step-desc-sm">"What brings you in today?" / «چه چیزی امروز شما را اینجا آورده؟»</div></div></li>
+          <li><div class="step-num-sm rose">6</div><div class="step-body"><div class="step-en">❤️ Measure vital signs</div><div class="step-fa">علائم حیاتی را اندازه بگیرید</div></div></li>
+          <li><div class="step-num-sm rose">7</div><div class="step-body"><div class="step-en">💊 Review medications and allergies</div><div class="step-fa">داروها و حساسیت‌ها را مرور کنید</div></div></li>
+          <li><div class="step-num-sm rose">8</div><div class="step-body"><div class="step-en">📝 Document everything in the EMR</div><div class="step-fa">همه چیز را در سیستم الکترونیک ثبت کنید</div></div></li>
+          <li><div class="step-num-sm rose">9</div><div class="step-body"><div class="step-en">👨‍⚕️ Tell the provider: "The patient is ready."</div><div class="step-fa">به پزشک بگویید: «بیمار آماده است.»</div></div></li>
+          <li><div class="step-num-sm rose">10</div><div class="step-body"><div class="step-en">🧼 Wash hands AFTER leaving the room</div><div class="step-fa">بعد از خروج از اتاق دست بشویید</div></div></li>
+        </ul>
+
+        <div class="tip-box">
+          <div class="tip-icon">⭐</div>
+          <div class="tip-content">
+            <div class="tip-title">KEY RULE · قانون مهم</div>
+            <div class="tip-text">Always use <strong>TWO patient identifiers</strong> before any procedure. Name + Date of Birth is most common. This is a safety rule!</div>
+            <div class="tip-farsi">همیشه قبل از هر کاری از <strong>دو شناسه بیمار</strong> استفاده کنید. نام + تاریخ تولد رایج‌ترین است. این یک قانون ایمنی است!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== INJECTIONS ===== -->
+    <div id="clinicalSub_injections" class="clinical-sub" style="display:none;">
+      <div class="card card-purple">
+        <h2>💉 Injections · تزریقات</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>As a medical assistant, you will give injections. There are different types. Each one goes into a different part of the body.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>به عنوان دستیار پزشکی تزریق می‌زنید. انواع مختلفی وجود دارد. هر کدام به قسمت متفاوتی از بدن می‌رود.</p>
+          </div>
+        </div>
+
+        <div style="overflow-x:auto;">
+          <table class="data-table">
+            <thead><tr><th>Type · نوع</th><th>Where · کجا</th><th>Angle · زاویه</th><th>Examples · مثال</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><strong>Intradermal (ID)</strong><br><span style="font-family:var(--font-farsi);font-size:0.82rem;">داخل پوستی</span></td>
+                <td>Just under the skin surface (forearm)<br><span style="font-family:var(--font-farsi);font-size:0.82rem;">زیر سطح پوست (ساعد)</span></td>
+                <td><strong>10–15°</strong></td>
+                <td>TB skin test, allergy testing<br><span style="font-family:var(--font-farsi);font-size:0.82rem;">تست سل، آلرژی</span></td>
+              </tr>
+              <tr>
+                <td><strong>Subcutaneous (Sub-Q)</strong><br><span style="font-family:var(--font-farsi);font-size:0.82rem;">زیر جلدی</span></td>
+                <td>Into fat layer under skin (abdomen, upper arm, thigh)<br><span style="font-family:var(--font-farsi);font-size:0.82rem;">لایه چربی زیر پوست</span></td>
+                <td><strong>45°</strong></td>
+                <td>Insulin, epinephrine<br><span style="font-family:var(--font-farsi);font-size:0.82rem;">انسولین</span></td>
+              </tr>
+              <tr>
+                <td><strong>Intramuscular (IM)</strong><br><span style="font-family:var(--font-farsi);font-size:0.82rem;">عضلانی</span></td>
+                <td>Into the muscle (deltoid, vastus lateralis, gluteal)<br><span style="font-family:var(--font-farsi);font-size:0.82rem;">داخل عضله</span></td>
+                <td><strong>90°</strong></td>
+                <td>Vaccines, antibiotics<br><span style="font-family:var(--font-farsi);font-size:0.82rem;">واکسن‌ها، آنتی‌بیوتیک</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="divider"></div>
+        <h3>📍 IM Injection Sites · محل‌های تزریق عضلانی</h3>
+        <div class="grid-2" style="margin-top:14px;">
+          <div class="highlight-purple" style="border-radius:12px;padding:16px;">
+            <strong>💪 Deltoid (Upper Arm)</strong>
+            <div class="farsi-h" style="margin:4px 0 8px;font-size:0.82rem;">دلتوئید (بالای بازو)</div>
+            <p style="font-size:0.88rem;">Used for most adult vaccines. Small muscle — limit to 1 mL. / برای اکثر واکسن‌های بزرگسال. عضله کوچک — حداکثر ۱ میلی‌لیتر.</p>
+          </div>
+          <div class="highlight-teal" style="border-radius:12px;padding:16px;">
+            <strong>🦵 Vastus Lateralis (Outer Thigh)</strong>
+            <div class="farsi-h" style="margin:4px 0 8px;font-size:0.82rem;">عضله بیرونی ران</div>
+            <p style="font-size:0.88rem;">Preferred for infants and toddlers. Larger muscle. / برای نوزادان و کودکان کوچک. عضله بزرگ‌تر.</p>
+          </div>
+        </div>
+
+        <div class="tip-box" style="margin-top:16px;">
+          <div class="tip-icon">🎯</div>
+          <div class="tip-content">
+            <div class="tip-title">Z-TRACK METHOD · روش Z-TRACK</div>
+            <div class="tip-text">For IM injections that can stain skin (like iron): pull skin to the side before injecting. Release after withdrawing needle. This prevents medicine from leaking back.</div>
+            <div class="tip-farsi">برای تزریقات عضلانی که پوست را رنگ می‌کنند (مثل آهن): قبل از تزریق پوست را به کنار بکشید. بعد از خارج کردن سوزن رها کنید. این از نشت دارو جلوگیری می‌کند.</div>
+          </div>
+        </div>
+
+        <div class="mini-quiz">
+          <div class="quiz-q">A subcutaneous injection is given at what angle?</div>
+          <div class="quiz-q-fa">تزریق زیر جلدی با چه زاویه‌ای انجام می‌شود؟</div>
+          <div class="quiz-options" id="q_inj1">
+            <button class="quiz-option" onclick="checkQ('q_inj1',this,false)">A. 15 degrees</button>
+            <button class="quiz-option" onclick="checkQ('q_inj1',this,true)">B. 45 degrees ✓</button>
+            <button class="quiz-option" onclick="checkQ('q_inj1',this,false)">C. 90 degrees</button>
+            <button class="quiz-option" onclick="checkQ('q_inj1',this,false)">D. 180 degrees</button>
+          </div>
+          <div class="quiz-feedback" id="q_inj1_fb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SPECIMENS ===== -->
+    <div id="clinicalSub_specimens" class="clinical-sub" style="display:none;">
+      <div class="card card-green">
+        <h2>🧪 Specimen Collection · جمع‌آوری نمونه</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>Specimens are samples from the patient's body. You collect them for lab testing. Common types: blood, urine, throat swab.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>نمونه‌ها نمونه‌هایی از بدن بیمار هستند. آن‌ها را برای آزمایش جمع‌آوری می‌کنید. انواع رایج: خون، ادرار، سواب گلو.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🩸 Venipuncture (Blood Draw)</span>
+              <span class="acc-fa">خون‌گیری از ورید</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <ul class="step-list">
+                <li><div class="step-num-sm green">1</div><div class="step-body"><div class="step-en">Identify patient with 2 identifiers</div><div class="step-fa">با ۲ شناسه هویت بیمار را تأیید کنید</div></div></li>
+                <li><div class="step-num-sm green">2</div><div class="step-body"><div class="step-en">Wash hands and put on gloves</div><div class="step-fa">دست بشویید و دستکش بپوشید</div></div></li>
+                <li><div class="step-num-sm green">3</div><div class="step-body"><div class="step-en">Assemble supplies: vacutainer, needle, tubes, tourniquet, alcohol swab</div><div class="step-fa">لوازم را آماده کنید: لوله، سوزن، تورنیکه، پنبه الکل</div></div></li>
+                <li><div class="step-num-sm green">4</div><div class="step-body"><div class="step-en">Apply tourniquet 3–4 inches above elbow</div><div class="step-fa">تورنیکه را ۳-۴ اینچ بالای آرنج ببندید</div></div></li>
+                <li><div class="step-num-sm green">5</div><div class="step-body"><div class="step-en">Palpate vein — most common: median cubital vein (antecubital fossa)</div><div class="step-fa">ورید را لمس کنید — رایج‌ترین: ورید میانی آرنج</div></div></li>
+                <li><div class="step-num-sm green">6</div><div class="step-body"><div class="step-en">Clean with alcohol swab — let DRY for 30 seconds</div><div class="step-fa">با پنبه الکل تمیز کنید — ۳۰ ثانیه بگذارید خشک شود</div></div></li>
+                <li><div class="step-num-sm green">7</div><div class="step-body"><div class="step-en">Insert needle at 15–30° bevel up</div><div class="step-fa">سوزن را با زاویه ۱۵-۳۰ درجه وارد کنید، سر سوزن رو به بالا</div></div></li>
+                <li><div class="step-num-sm green">8</div><div class="step-body"><div class="step-en">Release tourniquet before removing needle</div><div class="step-fa">قبل از خارج کردن سوزن تورنیکه را باز کنید</div></div></li>
+                <li><div class="step-num-sm green">9</div><div class="step-body"><div class="step-en">Apply pressure. Do NOT have patient bend arm — causes bruising</div><div class="step-fa">فشار بدهید. بیمار دست را خم نکند — کبودی ایجاد می‌کند</div></div></li>
+                <li><div class="step-num-sm green">10</div><div class="step-body"><div class="step-en">Label tubes IMMEDIATELY at the bedside</div><div class="step-fa">لوله‌ها را فوری کنار تخت بیمار برچسب بزنید</div></div></li>
+              </ul>
+              <div class="tip-box">
+                <div class="tip-icon">🎨</div>
+                <div class="tip-content">
+                  <div class="tip-title">TUBE COLORS · رنگ لوله‌ها</div>
+                  <div class="tip-text">
+                    🔴 Red = Chemistry tests (no additive)<br>
+                    💛 Yellow = Blood cultures<br>
+                    🟣 Purple/Lavender = CBC (EDTA)<br>
+                    🔵 Blue = Coagulation tests (citrate)<br>
+                    🟢 Green = Chemistry (heparin)
+                  </div>
+                  <div class="tip-farsi">قرمز = آزمایش شیمی | بنفش = CBC | آبی = انعقاد | سبز = شیمی با هپارین</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🚽 Urine Collection (Midstream Clean-Catch)</span>
+              <span class="acc-fa">جمع‌آوری ادرار (نمونه میانی)</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">Instructions for Patient · دستور برای بیمار</span>
+                  <ol style="margin-left:18px;margin-top:8px;line-height:2.2;">
+                    <li>Clean the genital area with wipes (front to back)</li>
+                    <li>Start urinating into the toilet</li>
+                    <li>Midstream: catch urine in the cup (NOT the first or last part)</li>
+                    <li>Put lid on cup</li>
+                    <li>Give to medical assistant immediately</li>
+                  </ol>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی · دستورالعمل برای بیمار</span>
+                  <ol style="margin-right:18px;margin-top:8px;line-height:2.2;font-size:0.9rem;">
+                    <li>ناحیه تناسلی را با دستمال تمیز کنید (از جلو به عقب)</li>
+                    <li>در توالت ادرار کنید</li>
+                    <li>در وسط: ادرار را در لیوان بگیرید (نه اول و نه آخر)</li>
+                    <li>درب لیوان را ببندید</li>
+                    <li>فوری به دستیار پزشکی بدهید</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-quiz">
+          <div class="quiz-q">When labeling blood tubes, when should you label them?</div>
+          <div class="quiz-q-fa">لوله‌های خون را کِی باید برچسب زد؟</div>
+          <div class="quiz-options" id="q_spec1">
+            <button class="quiz-option" onclick="checkQ('q_spec1',this,false)">A. After sending them to the lab</button>
+            <button class="quiz-option" onclick="checkQ('q_spec1',this,true)">B. Immediately at the patient's side ✓</button>
+            <button class="quiz-option" onclick="checkQ('q_spec1',this,false)">C. When you get back to the nurses' station</button>
+            <button class="quiz-option" onclick="checkQ('q_spec1',this,false)">D. Before drawing the blood</button>
+          </div>
+          <div class="quiz-feedback" id="q_spec1_fb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== EKG ===== -->
+    <div id="clinicalSub_ekg" class="clinical-sub" style="display:none;">
+      <div class="card card-blue">
+        <h2>📈 EKG / ECG Basics · اصول نوار قلب</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>An EKG (electrocardiogram) records the <strong>electrical activity</strong> of the heart. It shows if the heart is beating normally.</p>
+            <p>A standard EKG has <strong>12 leads</strong>. As an MA, you place the electrodes and run the machine.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>نوار قلب <strong>فعالیت الکتریکی</strong> قلب را ثبت می‌کند. نشان می‌دهد آیا قلب به طور طبیعی می‌زند.</p>
+            <p>نوار قلب استاندارد <strong>۱۲ لید</strong> دارد. شما الکترودها را می‌گذارید و دستگاه را راه‌اندازی می‌کنید.</p>
+          </div>
+        </div>
+
+        <ul class="step-list">
+          <li><div class="step-num-sm rose">1</div><div class="step-body"><div class="step-en">Explain the procedure to the patient</div><div class="step-fa">روش را برای بیمار توضیح دهید</div><div class="step-desc-sm">"This test is painless. It will record your heart's activity."</div></div></li>
+          <li><div class="step-num-sm rose">2</div><div class="step-body"><div class="step-en">Have patient lie supine (on back). Remove clothing from chest, arms, legs.</div><div class="step-fa">بیمار روی پشت بخوابد. لباس از سینه، دست‌ها، پاها بردارید.</div></div></li>
+          <li><div class="step-num-sm rose">3</div><div class="step-body"><div class="step-en">Clean skin if needed. Dry and shave if hair interferes.</div><div class="step-fa">در صورت نیاز پوست را تمیز کنید. اگر مو مانع است خشک کنید و بتراشید.</div></div></li>
+          <li><div class="step-num-sm rose">4</div><div class="step-body"><div class="step-en">Apply 10 electrodes: 4 on limbs + 6 on chest (precordial)</div><div class="step-fa">۱۰ الکترود بگذارید: ۴ روی اندام‌ها + ۶ روی سینه</div></div></li>
+          <li><div class="step-num-sm rose">5</div><div class="step-body"><div class="step-en">Ask patient to lie still and breathe normally. DO NOT talk.</div><div class="step-fa">از بیمار بخواهید ساکت بماند و طبیعی نفس بکشد. حرف نزند.</div></div></li>
+          <li><div class="step-num-sm rose">6</div><div class="step-body"><div class="step-en">Run the EKG and print the tracing</div><div class="step-fa">نوار قلب را اجرا کنید و نتیجه را چاپ کنید</div></div></li>
+        </ul>
+
+        <div class="highlight-blue">
+          <strong>⚡ Limb Lead Placement:</strong><br>
+          RA = Right Arm | LA = Left Arm | RL = Right Leg | LL = Left Leg<br>
+          <strong>Memory trick:</strong> "White on Right, Smoke over Fire" (Black on left arm, Red on left leg, Green on right leg)<br>
+          <span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;font-size:0.88rem;">RA = دست راست | LA = دست چپ | RL = پای راست | LL = پای چپ</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STERILE vs CLEAN ===== -->
+    <div id="clinicalSub_sterile" class="clinical-sub" style="display:none;">
+      <div class="card card-gold">
+        <h2>🧤 Sterile vs Clean · استریل در مقابل تمیز</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>This is very important to understand. <strong>Sterile</strong> and <strong>clean</strong> are different. Using the wrong one can cause infection!</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>فهمیدن این موضوع بسیار مهم است. <strong>استریل</strong> و <strong>تمیز</strong> فرق دارند. استفاده اشتباه می‌تواند باعث عفونت شود!</p>
+          </div>
+        </div>
+
+        <div class="do-dont" style="margin-top:16px;">
+          <div style="background:var(--teal-light);border-radius:var(--radius-sm);padding:18px;border:2px solid var(--teal);">
+            <div class="do-title" style="color:var(--teal-dark);">🔵 STERILE · استریل</div>
+            <p style="font-size:0.9rem;margin-bottom:8px;"><strong>Definition:</strong> Free from ALL microorganisms — bacteria, viruses, spores, everything.</p>
+            <p style="font-size:0.9rem;margin-bottom:8px;"><strong>Used for:</strong> Invasive procedures — anything that breaks the skin or enters a body cavity.</p>
+            <p style="font-size:0.9rem;"><strong>Examples:</strong> Surgical instruments, sterile gloves, urinary catheters, wound irrigation.</p>
+            <div style="font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.85rem;color:var(--text-mid);margin-top:8px;border-top:1px solid var(--teal);padding-top:8px;">
+              <strong>استریل:</strong> کاملاً فاقد هر گونه میکروارگانیسم. برای روش‌های تهاجمی استفاده می‌شود — هر چیزی که پوست را قطع کند یا وارد حفره بدن شود.
+            </div>
+          </div>
+          <div style="background:var(--green-light);border-radius:var(--radius-sm);padding:18px;border:2px solid var(--green);">
+            <div class="do-title" style="color:var(--green-dark);">🟢 CLEAN / MEDICAL ASEPSIS · تمیز</div>
+            <p style="font-size:0.9rem;margin-bottom:8px;"><strong>Definition:</strong> Reduces microorganisms but does NOT remove all of them.</p>
+            <p style="font-size:0.9rem;margin-bottom:8px;"><strong>Used for:</strong> Non-invasive procedures that do not break the skin.</p>
+            <p style="font-size:0.9rem;"><strong>Examples:</strong> Taking BP, regular gloves, handwashing, cleaning exam table.</p>
+            <div style="font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.85rem;color:var(--text-mid);margin-top:8px;border-top:1px solid var(--green);padding-top:8px;">
+              <strong>تمیز:</strong> میکروارگانیسم‌ها را کاهش می‌دهد اما همه را از بین نمی‌برد. برای روش‌های غیرتهاجمی استفاده می‌شود.
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-quiz">
+          <div class="quiz-q">A urinary catheter insertion requires which technique?</div>
+          <div class="quiz-q-fa">گذاشتن کاتتر ادراری نیاز به کدام تکنیک دارد؟</div>
+          <div class="quiz-options" id="q_sterile1">
+            <button class="quiz-option" onclick="checkQ('q_sterile1',this,false)">A. Clean technique</button>
+            <button class="quiz-option" onclick="checkQ('q_sterile1',this,true)">B. Sterile technique ✓</button>
+            <button class="quiz-option" onclick="checkQ('q_sterile1',this,false)">C. No gloves needed</button>
+            <button class="quiz-option" onclick="checkQ('q_sterile1',this,false)">D. Either is fine</button>
+          </div>
+          <div class="quiz-feedback" id="q_sterile1_fb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== DOCUMENTING ===== -->
+    <div id="clinicalSub_documenting" class="clinical-sub" style="display:none;">
+      <div class="card card-purple">
+        <h2>📝 Documenting Patient Information · ثبت اطلاعات بیمار</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p><strong>Documentation</strong> means writing down what you observe, measure, and do. Good documentation is very important for patient safety and legal reasons.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p><strong>مستندسازی</strong> یعنی نوشتن آنچه مشاهده، اندازه‌گیری، و انجام می‌دهید. مستندسازی خوب برای ایمنی بیمار و دلایل قانونی بسیار مهم است.</p>
+          </div>
+        </div>
+
+        <div class="highlight-purple">
+          <h3>📋 Golden Rules of Documentation · قوانین طلایی مستندسازی</h3>
+        </div>
+        <ul class="step-list" style="margin-top:12px;">
+          <li><div class="step-num-sm purple">✅</div><div class="step-body"><div class="step-en">If it was NOT documented, it was NOT done</div><div class="step-fa">اگر ثبت نشده، انجام نشده</div><div class="step-desc-sm">This is a legal principle. Always document everything.</div></div></li>
+          <li><div class="step-num-sm purple">✅</div><div class="step-body"><div class="step-en">Write OBJECTIVELY — facts, not opinions</div><div class="step-fa">عینی بنویسید — حقایق، نه نظر شخصی</div><div class="step-desc-sm">BAD: "Patient seemed drunk." GOOD: "Patient had slurred speech and unsteady gait."</div></div></li>
+          <li><div class="step-num-sm purple">✅</div><div class="step-body"><div class="step-en">Never erase or use white-out on paper charts</div><div class="step-fa">هرگز در پرونده کاغذی پاک نکنید</div><div class="step-desc-sm">Draw ONE line through the error, initial, and date it.</div></div></li>
+          <li><div class="step-num-sm purple">✅</div><div class="step-body"><div class="step-en">Document as soon as possible after care</div><div class="step-fa">فوری بعد از مراقبت ثبت کنید</div></div></li>
+          <li><div class="step-num-sm purple">✅</div><div class="step-body"><div class="step-en">Use approved abbreviations only</div><div class="step-fa">فقط از اختصارات مجاز استفاده کنید</div></div></li>
+          <li><div class="step-num-sm purple">✅</div><div class="step-body"><div class="step-en">Include date, time, and your signature/initials</div><div class="step-fa">تاریخ، زمان، و امضا/حروف اول نامتان را بنویسید</div></div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-rose" onclick="showMainSection('communication', document.querySelectorAll('.nav-list button')[3])">
+        ▶ Next: Communication Skills · مهارت‌های ارتباطی
+      </button>
+    </div>
+  </section>
+
+  <!-- ====================================================
+       SECTION 5: COMMUNICATION SKILLS
+  ==================================================== -->
+  <section id="communication" class="section-panel">
+
+    <div class="section-hero blue-hero">
+      <span class="hero-emoji">💬</span>
+      <div class="hero-title">Communication Skills</div>
+      <div class="hero-title-farsi">مهارت‌های ارتباطی</div>
+      <p class="hero-desc">Learn how to talk to patients professionally, kindly, and safely — in English and Persian.</p>
+    </div>
+
+    <div class="section-nav-mini" id="commMiniNav">
+      <button class="snav-btn comm-btn active" onclick="showCommSub('therapeutic',this)">🤝 Therapeutic Comm.</button>
+      <button class="snav-btn comm-btn" onclick="showCommSub('patientTalk',this)">🗣️ Talking to Patients</button>
+      <button class="snav-btn comm-btn" onclick="showCommSub('upset',this)">😤 Upset Patients</button>
+      <button class="snav-btn comm-btn" onclick="showCommSub('phone',this)">📞 Phone Skills</button>
+      <button class="snav-btn comm-btn" onclick="showCommSub('privacy',this)">🔒 Privacy</button>
+      <button class="snav-btn comm-btn" onclick="showCommSub('bestResponse',this)">✅ Best Response Quiz</button>
+    </div>
+
+    <!-- ===== THERAPEUTIC COMMUNICATION ===== -->
+    <div id="commSub_therapeutic" class="comm-sub">
+      <div class="card card-blue">
+        <h2>🤝 Therapeutic Communication · ارتباط درمانی</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p><strong>Therapeutic communication</strong> means communicating in a way that helps the patient feel safe, heard, and respected. It is a skill, like any clinical skill.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p><strong>ارتباط درمانی</strong> یعنی ارتباط برقرار کردن به روشی که بیمار احساس امنیت، شنیده شدن، و احترام کند. این یک مهارت است، مثل هر مهارت بالینی دیگری.</p>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <h3>✅ Therapeutic Techniques · روش‌های درمانی</h3>
+        <div class="accordion" style="margin-top:14px;">
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">👂 Active Listening · گوش دادن فعال</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">English</span>
+                  <p>Look at the patient. Nod your head. Say "I understand" or "I hear you." Do NOT check your phone or look away. Do NOT interrupt.</p>
+                  <p><strong>Example:</strong> Patient says, "I'm so tired of being sick." You say: "I hear you. That sounds really hard."</p>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی</span>
+                  <p>به بیمار نگاه کنید. سر تکان دهید. بگویید "می‌فهمم" یا "می‌شنوم." گوشی نگاه نکنید. قطع نکنید.</p>
+                  <p><strong>مثال:</strong> بیمار می‌گوید «از بیمار بودن خسته شدم.» شما می‌گویید: «می‌شنوم. این واقعاً سخت به نظر می‌رسد.»</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🔁 Restating / Reflecting · تکرار / بازتاب</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">English</span>
+                  <p>Repeat what the patient said in your own words. This shows you were listening and helps clarify.</p>
+                  <p><strong>Example:</strong> Patient: "My stomach hurts a lot in the morning." You: "So the pain is worse in the mornings — is that right?"</p>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی</span>
+                  <p>آنچه بیمار گفت را با کلمات خودتان تکرار کنید. این نشان می‌دهد گوش داده‌اید.</p>
+                  <p><strong>مثال:</strong> بیمار: «صبح‌ها معده‌ام خیلی درد می‌کند.» شما: «پس درد صبح‌ها بیشتر است — درست است؟»</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🤲 Empathy · همدلی</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">English</span>
+                  <p>Show you understand how the patient feels. Do NOT say "I know exactly how you feel." Instead, say "I can imagine that must be difficult."</p>
+                  <p><strong>Example:</strong> "That sounds very frightening. I'm here to help."</p>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی</span>
+                  <p>نشان دهید احساسات بیمار را می‌فهمید. نگویید «دقیقاً می‌دانم چه احساسی دارید.» در عوض بگویید «تصور می‌کنم که سخت است.»</p>
+                  <p><strong>مثال:</strong> «این خیلی ترسناک به نظر می‌رسد. اینجا هستم که کمک کنم.»</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">❓ Open-ended Questions · سؤالات باز</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">English</span>
+                  <p>Open-ended questions cannot be answered with just "yes" or "no." They allow the patient to share more information.</p>
+                  <p><strong>Open (GOOD):</strong> "Tell me about your pain."</p>
+                  <p><strong>Closed (LESS HELPFUL):</strong> "Does it hurt?" → just "yes" or "no"</p>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی</span>
+                  <p>سؤالات باز را نمی‌توان فقط با «بله» یا «خیر» جواب داد. بیمار می‌تواند اطلاعات بیشتری بدهد.</p>
+                  <p><strong>باز (خوب):</strong> «در مورد دردتان برایم بگویید.»</p>
+                  <p><strong>بسته:</strong> «درد دارید؟» → فقط «بله» یا «خیر»</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <h3>❌ Non-Therapeutic Responses · پاسخ‌های غیردرمانی</h3>
+        <p style="margin-bottom:14px;">These are things you should NEVER say to a patient:</p>
+        <div class="do-dont">
+          <div class="dont-box">
+            <div class="do-title">❌ DON'T SAY · نگویید</div>
+            <div class="do-item">"Calm down." (dismissive)
+              <div class="do-fa">«آرام باشید.» (بی‌احترامی)</div>
+            </div>
+            <div class="do-item">"I know exactly how you feel."
+              <div class="do-fa">«دقیقاً می‌دانم چه احساسی دارید.»</div>
+            </div>
+            <div class="do-item">"Don't worry, everything will be fine."
+              <div class="do-fa">«نگران نباشید، همه چیز خوب می‌شود.»</div>
+            </div>
+            <div class="do-item">"Why did you do that?"
+              <div class="do-fa">«چرا این کار را کردید؟»</div>
+            </div>
+          </div>
+          <div class="do-box">
+            <div class="do-title">✅ SAY INSTEAD · بجایش بگویید</div>
+            <div class="do-item">"I can see you are upset. I'm listening."
+              <div class="do-fa">«می‌بینم که ناراحتید. گوش می‌دهم.»</div>
+            </div>
+            <div class="do-item">"I can imagine that is very difficult."
+              <div class="do-fa">«تصور می‌کنم که خیلی سخت است.»</div>
+            </div>
+            <div class="do-item">"I'll make sure the doctor hears your concerns."
+              <div class="do-fa">«مطمئن می‌شوم پزشک نگرانی‌هایتان را می‌شنود.»</div>
+            </div>
+            <div class="do-item">"Tell me more about what happened."
+              <div class="do-fa">«بیشتر در مورد آنچه اتفاق افتاد بگویید.»</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== TALKING TO PATIENTS ===== -->
+    <div id="commSub_patientTalk" class="comm-sub" style="display:none;">
+      <div class="card card-teal">
+        <h2>🗣️ Talking to Patients · صحبت با بیماران</h2>
+        <p style="margin-bottom:16px;">Read these example dialogues. See how the medical assistant talks to patients.</p>
+        <p style="font-family:var(--font-farsi);direction:rtl;text-align:right;font-size:0.9rem;color:var(--text-soft);margin-bottom:20px;">این مثال‌های گفتگو را بخوانید. ببینید دستیار پزشکی چطور با بیماران صحبت می‌کند.</p>
+
+        <!-- Dialogue 1 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">🚪</div>
+            <div>
+              <div class="scenario-title">Scene: Entering the Room · صحنه: ورود به اتاق</div>
+            </div>
+          </div>
+          <div class="dialogue-box">
+            <div class="dialogue-line ma">
+              <div class="dialogue-avatar">👩‍⚕️</div>
+              <div>
+                <div class="dialogue-label">Medical Assistant</div>
+                <div class="dialogue-bubble">"Knock knock! Hi, Mrs. Johnson? I'm Sara, the medical assistant. May I come in?"<div class="dialogue-fa">«در می‌زنم! سلام خانم جانسون؟ من سارا هستم، دستیار پزشکی. می‌توانم وارد شوم؟»</div></div>
+              </div>
+            </div>
+            <div class="dialogue-line patient">
+              <div class="dialogue-avatar">👩</div>
+              <div>
+                <div class="dialogue-label">Patient</div>
+                <div class="dialogue-bubble">"Yes, come in."</div>
+              </div>
+            </div>
+            <div class="dialogue-line ma">
+              <div class="dialogue-avatar">👩‍⚕️</div>
+              <div>
+                <div class="dialogue-label">Medical Assistant</div>
+                <div class="dialogue-bubble">"Thank you. Can you tell me your full name and date of birth so I can confirm I have the right patient?"<div class="dialogue-fa">«ممنون. می‌توانید نام کامل و تاریخ تولدتان را بگویید تا مطمئن شوم بیمار درستی دارم؟»</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="tip-box" style="margin-top:12px;">
+            <div class="tip-icon">💡</div>
+            <div class="tip-content">
+              <div class="tip-title">Why knock? · چرا در می‌زنیم؟</div>
+              <div class="tip-text">Knocking respects patient privacy and dignity. Always knock, even if the door is open.</div>
+              <div class="tip-farsi">در زدن به حریم خصوصی و کرامت بیمار احترام می‌گذارد. همیشه در بزنید، حتی اگر در باز باشد.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dialogue 2 -->
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <div class="scenario-icon">📋</div>
+            <div>
+              <div class="scenario-title">Scene: Getting Chief Complaint · صحنه: گرفتن شکایت اصلی</div>
+            </div>
+          </div>
+          <div class="dialogue-box">
+            <div class="dialogue-line ma">
+              <div class="dialogue-avatar">👩‍⚕️</div>
+              <div>
+                <div class="dialogue-label">Medical Assistant</div>
+                <div class="dialogue-bubble">"What brings you in today?"<div class="dialogue-fa">«امروز چه چیزی شما را اینجا آورده؟»</div></div>
+              </div>
+            </div>
+            <div class="dialogue-line patient">
+              <div class="dialogue-avatar">👴</div>
+              <div>
+                <div class="dialogue-label">Patient</div>
+                <div class="dialogue-bubble">"My chest has been hurting for two days."</div>
+              </div>
+            </div>
+            <div class="dialogue-line ma">
+              <div class="dialogue-avatar">👩‍⚕️</div>
+              <div>
+                <div class="dialogue-label">Medical Assistant</div>
+                <div class="dialogue-bubble">"I understand. Can you tell me more about the pain? Is it sharp or dull? Does it come and go?"<div class="dialogue-fa">«می‌فهمم. می‌توانید بیشتر در مورد درد بگویید؟ تیز است یا کُند؟ می‌آید و می‌رود؟»</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="highlight-gold" style="margin-top:12px;">
+            <strong>📌 OLDCARTS Method for assessing pain:</strong><br>
+            <strong>O</strong>nset · <strong>L</strong>ocation · <strong>D</strong>uration · <strong>C</strong>haracter · <strong>A</strong>ssociating symptoms · <strong>R</strong>elieving factors · <strong>T</strong>iming · <strong>S</strong>everity (scale 1–10)<br>
+            <span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;font-size:0.85rem;">شروع · محل · مدت · ماهیت · علائم همراه · عوامل تسکین · زمان · شدت (مقیاس ۱-۱۰)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== UPSET PATIENTS ===== -->
+    <div id="commSub_upset" class="comm-sub" style="display:none;">
+      <div class="card card-rose">
+        <h2>😤 Working With Upset Patients · کار با بیماران ناراحت</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>Sometimes patients are angry, scared, or frustrated. Your job is to stay calm and help them feel heard.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>گاهی بیماران عصبانی، ترسیده، یا ناامید هستند. کار شما این است که آرام بمانید و به آن‌ها کمک کنید احساس شنیده شدن کنند.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top:16px;">🪜 De-escalation Steps · مراحل کاهش تنش</h3>
+        <ul class="step-list">
+          <li><div class="step-num-sm rose">1</div><div class="step-body"><div class="step-en">Stay CALM yourself — your tone affects the patient</div><div class="step-fa">خودتان آرام بمانید — لحن شما روی بیمار تأثیر دارد</div></div></li>
+          <li><div class="step-num-sm rose">2</div><div class="step-body"><div class="step-en">Do NOT argue or get defensive</div><div class="step-fa">بحث نکنید یا دفاعی نشوید</div></div></li>
+          <li><div class="step-num-sm rose">3</div><div class="step-body"><div class="step-en">Listen without interrupting</div><div class="step-fa">بدون قطع کردن گوش دهید</div></div></li>
+          <li><div class="step-num-sm rose">4</div><div class="step-body"><div class="step-en">Acknowledge their feelings: "I understand you are frustrated."</div><div class="step-fa">احساساتشان را تأیید کنید: «می‌فهمم که ناراحتید.»</div></div></li>
+          <li><div class="step-num-sm rose">5</div><div class="step-body"><div class="step-en">Offer solutions or involve the provider if needed</div><div class="step-fa">راه‌حل پیشنهاد دهید یا در صورت نیاز پزشک را درگیر کنید</div></div></li>
+          <li><div class="step-num-sm rose">6</div><div class="step-body"><div class="step-en">If patient becomes threatening — ensure your safety first</div><div class="step-fa">اگر بیمار تهدیدکننده شد — اول ایمنی خودتان را تأمین کنید</div></div></li>
+        </ul>
+
+        <div class="mini-quiz">
+          <div class="quiz-q">A patient is yelling because they waited 2 hours. What should you say FIRST?</div>
+          <div class="quiz-q-fa">بیمار به خاطر ۲ ساعت انتظار داد می‌زند. اول چه باید بگویید؟</div>
+          <div class="quiz-options" id="q_upset1">
+            <button class="quiz-option" onclick="checkQ('q_upset1',this,false)">A. "If you keep yelling, I'll have to ask you to leave."</button>
+            <button class="quiz-option" onclick="checkQ('q_upset1',this,false)">B. "It's not my fault — the doctor is busy."</button>
+            <button class="quiz-option" onclick="checkQ('q_upset1',this,true)">C. "I understand your frustration. I'm sorry for the wait. Let me check on your status right away." ✓</button>
+            <button class="quiz-option" onclick="checkQ('q_upset1',this,false)">D. "Please calm down."</button>
+          </div>
+          <div class="quiz-feedback" id="q_upset1_fb"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PHONE SKILLS ===== -->
+    <div id="commSub_phone" class="comm-sub" style="display:none;">
+      <div class="card card-purple">
+        <h2>📞 Phone Communication · ارتباط تلفنی</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>Many clinic calls involve scheduling, prescription refills, results, and urgent concerns. You must be professional and careful on the phone.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>بسیاری از تماس‌های کلینیک شامل نوبت‌دهی، تجدید نسخه، نتایج، و نگرانی‌های فوری است. باید در تلفن حرفه‌ای و مراقب باشید.</p>
+          </div>
+        </div>
+
+        <div class="highlight-purple" style="margin:16px 0;">
+          <strong>📱 When answering the phone:</strong><br>
+          Answer within 3 rings. Say: <em>"Thank you for calling [Clinic Name]. This is [Your Name]. How can I help you?"</em><br>
+          <span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:6px;font-size:0.88rem;">در ۳ زنگ جواب دهید. بگویید: «ممنون از تماس با [نام کلینیک]. من [نامتان] هستم. چطور می‌توانم کمک کنم؟»</span>
+        </div>
+
+        <div class="do-dont" style="margin:16px 0;">
+          <div class="do-box">
+            <div class="do-title">✅ DO · انجام دهید</div>
+            <div class="do-item">Speak clearly and slowly<div class="do-fa">واضح و آرام صحبت کنید</div></div>
+            <div class="do-item">Write down important information<div class="do-fa">اطلاعات مهم را بنویسید</div></div>
+            <div class="do-item">Verify patient identity before sharing information<div class="do-fa">قبل از دادن اطلاعات، هویت بیمار را تأیید کنید</div></div>
+            <div class="do-item">Ask if you can put them on hold<div class="do-fa">قبل از نگه داشتن تماس، بپرسید</div></div>
+          </div>
+          <div class="dont-box">
+            <div class="do-title">❌ DO NOT · انجام ندهید</div>
+            <div class="do-item">Share patient information without verifying identity<div class="do-fa">بدون تأیید هویت اطلاعات ندهید</div></div>
+            <div class="do-item">Leave patient on hold for more than 2 minutes<div class="do-fa">بیشتر از ۲ دقیقه منتظر نگه ندارید</div></div>
+            <div class="do-item">Eat or chew gum while on the phone<div class="do-fa">موقع تلفن غذا نخورید</div></div>
+            <div class="do-item">Discuss confidential info where others can hear<div class="do-fa">اطلاعات محرمانه را جایی که دیگران می‌شنوند بحث نکنید</div></div>
+          </div>
+        </div>
+
+        <div class="tip-box">
+          <div class="tip-icon">🚨</div>
+          <div class="tip-content">
+            <div class="tip-title">EMERGENCY CALLS · تماس‌های اورژانسی</div>
+            <div class="tip-text">If a caller says they are having chest pain, difficulty breathing, or feeling like they might pass out — NEVER put them on hold. Get help immediately and stay on the line.</div>
+            <div class="tip-farsi">اگر تماس‌گیرنده گفت دارد درد سینه، مشکل تنفس، یا احساس غش کردن دارد — هرگز منتظر نگه ندارید. فوری کمک بگیرید و روی خط بمانید.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PRIVACY ===== -->
+    <div id="commSub_privacy" class="comm-sub" style="display:none;">
+      <div class="card card-gold">
+        <h2>🔒 Privacy in Communication · حریم خصوصی در ارتباط</h2>
+        <div class="bilingual-block">
+          <div class="lang-en">
+            <span class="lang-label">English</span>
+            <p>Patient information is <strong>private and confidential</strong>. The law called <strong>HIPAA</strong> protects patient privacy. You MUST follow it.</p>
+          </div>
+          <div class="lang-fa">
+            <span class="lang-label">فارسی</span>
+            <p>اطلاعات بیمار <strong>خصوصی و محرمانه</strong> است. قانونی به نام <strong>HIPAA</strong> از حریم خصوصی بیمار محافظت می‌کند. باید آن را رعایت کنید.</p>
+          </div>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">📋 What is HIPAA? · HIPAA چیست؟</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <div class="bilingual-block">
+                <div class="lang-en">
+                  <span class="lang-label">English</span>
+                  <p>HIPAA = Health Insurance Portability and Accountability Act.<br>
+                  It is a federal law that protects patient health information.<br>
+                  Breaking HIPAA can result in fines, job loss, or even legal action.</p>
+                </div>
+                <div class="lang-fa">
+                  <span class="lang-label">فارسی</span>
+                  <p>HIPAA = قانون قابلیت انتقال و پاسخگویی بیمه سلامت<br>
+                  این یک قانون فدرال است که از اطلاعات سلامت بیمار محافظت می‌کند.<br>
+                  نقض HIPAA می‌تواند منجر به جریمه، از دست دادن شغل، یا اقدام قانونی شود.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-btn" onclick="toggleAcc(this)">
+              <span class="acc-en">🚫 What you cannot do · چه کارهایی نمی‌توانید بکنید</span>
+              <span class="acc-icon">▼</span>
+            </button>
+            <div class="accordion-body">
+              <ul style="list-style:none;margin-top:8px;line-height:2.2;">
+                <li>❌ Discuss a patient's condition in the hallway or waiting room</li>
+                <li>❌ Share patient information with family without patient consent</li>
+                <li>❌ Post anything about patients on social media</li>
+                <li>❌ Look up records of patients not assigned to you</li>
+                <li>❌ Leave patient charts visible to others</li>
+              </ul>
+              <div style="font-family:var(--font-farsi);direction:rtl;margin-top:10px;border-top:1px solid var(--border);padding-top:10px;font-size:0.9rem;line-height:2.2;">
+                ❌ در راهرو یا اتاق انتظار وضعیت بیمار را بحث نکنید<br>
+                ❌ بدون رضایت بیمار اطلاعات را با خانواده در میان نگذارید<br>
+                ❌ در شبکه‌های اجتماعی چیزی درباره بیماران نگذارید
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BEST RESPONSE QUIZ ===== -->
+    <div id="commSub_bestResponse" class="comm-sub" style="display:none;">
+      <div class="card card-purple">
+        <h2>✅ "What Should You Say?" Quiz · «چه باید بگویید؟» آزمون</h2>
+        <p style="margin-bottom:20px;">Choose the BEST response for the medical assistant in each situation.</p>
+
+        <!-- Q1 -->
+        <div class="mini-quiz">
+          <div class="quiz-q">Situation 1: A patient starts crying and says, "Nobody cares about me." What is the BEST response?</div>
+          <div class="quiz-q-fa">موقعیت ۱: بیمار شروع به گریه می‌کند و می‌گوید «هیچ‌کس به من اهمیت نمی‌دهد.» بهترین پاسخ چیست؟</div>
+          <div class="quiz-options" id="q_resp1">
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp1',this,'C')">A. "Don't worry, we all care about you here!"</button>
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp1',this,'C')">B. "Let me get the doctor — this is not my job."</button>
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp1',this,'A')">C. "It sounds like you are going through a really hard time. I am here and I am listening." ✓</button>
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp1',this,'C')">D. "You need to stay positive."</button>
+          </div>
+          <div class="quiz-feedback" id="q_resp1_fb"></div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="mini-quiz" style="margin-top:20px;">
+          <div class="quiz-q">Situation 2: A patient's daughter calls and asks for her father's test results. What should you do?</div>
+          <div class="quiz-q-fa">موقعیت ۲: دختر بیمار زنگ می‌زند و نتایج آزمایش پدرش را می‌خواهد. باید چه کار کنید؟</div>
+          <div class="quiz-options" id="q_resp2">
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp2',this,'A')">A. Ask if the patient has given permission, then check with the provider before sharing ✓</button>
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp2',this,'C')">B. Give her the results — she is family</button>
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp2',this,'C')">C. Tell her you can't help her at all</button>
+            <button class="quiz-option" onclick="checkQAdvanced('q_resp2',this,'C')">D. Give a general answer without specifics</button>
+          </div>
+          <div class="quiz-feedback" id="q_resp2_fb"></div>
+        </div>
+
+        <div class="coach-box" style="margin-top:20px;">
+          <div class="coach-avatar">👩‍⚕️</div>
+          <div class="coach-content">
+            <div class="coach-name">📣 Communication Coach</div>
+            <p class="coach-text">On the CCMA exam, communication questions always ask for the most therapeutic, professional, and patient-centered response. When in doubt: listen first, empathize, and protect privacy.</p>
+            <div class="coach-fa">در آزمون CCMA، سؤالات ارتباطی همیشه درمانی‌ترین، حرفه‌ای‌ترین، و بیمار-محورترین پاسخ را می‌خواهند. در صورت شک: اول گوش دهید، همدلی کنید، و از حریم خصوصی محافظت کنید.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-rose" onclick="showMainSection('clinical', document.querySelectorAll('.nav-list button')[2])">← Clinical Skills</button>
+      <button class="btn btn-blue" onclick="gotoSeg(4)">▶ Segment 4: Legal & Admin →</button>
+    </div>
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p><strong>CCMA Bilingual Success Lab</strong> — Segment 3: Clinical Skills + Communication</p>
+  <p class="footer-farsi">مهارت‌های بالینی و ارتباطی</p>
+  <p style="margin-top:10px;">Curriculum Designer &amp; Developer: <strong>Hilary Homaii</strong></p>
+</footer>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ===== MAIN SECTION SWITCH =====
+function showMainSection(id, btn) {
+  document.querySelectorAll('.section-panel').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-list button').forEach(b=>b.classList.remove('active'));
+  const p=document.getElementById(id);
+  if(p) p.classList.add('active');
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ===== CLINICAL SUB =====
+function showClinicalSub(id, btn) {
+  document.querySelectorAll('.clinical-sub').forEach(s=>s.style.display='none');
+  document.querySelectorAll('#clinicalMiniNav .snav-btn').forEach(b=>b.classList.remove('active'));
+  const t=document.getElementById('clinicalSub_'+id);
+  if(t) t.style.display='block';
+  if(btn) btn.classList.add('active');
+}
+
+// ===== COMM SUB =====
+function showCommSub(id, btn) {
+  document.querySelectorAll('.comm-sub').forEach(s=>s.style.display='none');
+  document.querySelectorAll('#commMiniNav .snav-btn').forEach(b=>b.classList.remove('active'));
+  const t=document.getElementById('commSub_'+id);
+  if(t) t.style.display='block';
+  if(btn) btn.classList.add('active');
+}
+
+// ===== ACCORDION =====
+function toggleAcc(btn) {
+  const body=btn.nextElementSibling;
+  const isOpen=body.classList.contains('open');
+  const acc=btn.closest('.accordion');
+  if(acc){
+    acc.querySelectorAll('.accordion-body').forEach(b=>b.classList.remove('open'));
+    acc.querySelectorAll('.accordion-btn').forEach(b=>b.classList.remove('open'));
+  }
+  if(!isOpen){body.classList.add('open');btn.classList.add('open');}
+}
+
+// ===== QUIZ =====
+function checkQ(groupId,btn,isCorrect) {
+  const group=document.getElementById(groupId);
+  const fb=document.getElementById(groupId+'_fb');
+  group.querySelectorAll('.quiz-option').forEach(b=>{b.disabled=true;b.style.cursor='default';});
+  if(isCorrect){
+    btn.classList.add('correct');
+    fb.className='quiz-feedback show correct-fb';
+    fb.innerHTML='✅ <strong>Correct! / درست!</strong><br><span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;">آفرین! درست است.</span>';
+  } else {
+    btn.classList.add('wrong');
+    fb.className='quiz-feedback show wrong-fb';
+    fb.innerHTML='❌ <strong>Not quite. / نه کاملاً.</strong> Read the explanation and remember for next time.<br><span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;">توضیحات را بخوانید.</span>';
+  }
+}
+
+function checkQAdvanced(groupId, btn, correctLetter) {
+  const group=document.getElementById(groupId);
+  const fb=document.getElementById(groupId+'_fb');
+  const options=group.querySelectorAll('.quiz-option');
+  const idx=Array.from(options).indexOf(btn);
+  const letters=['A','B','C','D'];
+  const chosen=letters[idx];
+  options.forEach(b=>{b.disabled=true;b.style.cursor='default';});
+  if(chosen===correctLetter){
+    btn.classList.add('correct');
+    fb.className='quiz-feedback show correct-fb';
+    fb.innerHTML='✅ <strong>Excellent! This is the most therapeutic, patient-centered response. / عالی! این درمانی‌ترین و بیمار-محورترین پاسخ است.</strong><br><span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;">این جواب به بیمار احساس شنیده شدن می‌دهد.</span>';
+  } else {
+    btn.classList.add('wrong');
+    fb.className='quiz-feedback show wrong-fb';
+    fb.innerHTML='❌ <strong>Not the best choice. / بهترین انتخاب نیست.</strong> Look for the answer that shows empathy and protects patient rights.<br><span style="font-family:var(--font-farsi);direction:rtl;display:block;text-align:right;margin-top:4px;">به دنبال جوابی باشید که همدلی نشان دهد و حقوق بیمار را حفظ کند.</span>';
+  }
+}
+
+// ===== NAVIGATION =====
+function gotoSeg(n) { alert('Please open the Segment '+n+' HTML file. · لطفاً فایل بخش '+n+' را باز کنید.'); }
+
+// ===== SCROLL TOP =====
+window.addEventListener('scroll',()=>{ document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>300); });
+</script>
+</body>
+</html>
